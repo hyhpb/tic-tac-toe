@@ -1,5 +1,4 @@
 import os
-from sys import*
 from time import *
 
 chess = "O"
@@ -7,16 +6,11 @@ play_time = 0
 
 
 def show_board():
-    print(board[0][0], board[0][1], board[0][2])
-    print(board[1][0], board[1][1], board[1][2])
-    print(board[2][0], board[2][1], board[2][2])
+    for i in board:
+        print("".join(i))
 
 
-board = [
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-    ["-", "-", "-"]
-]
+board = [["-" for _ in range(3)] for i in range(3)]
 while True:
 
     def play(i1, i2, chess):
@@ -48,7 +42,9 @@ while True:
         print("O获胜")
         show_board()
         break
-    if (board[0][0] == "X" and board[0][1] == "X" and board[0][2] == "X") or (board[1][0] == "X" and board[1][1] == "X" and board[1][2] == "X") or (board[2][0] == "X" and board[2][1] == "X" and board[2][2] == "X") or (
+    if (board[0][0] == "X" and board[0][1] == "X" and board[0][2] == "X") or (
+            board[1][0] == "X" and board[1][1] == "X" and board[1][2] == "X") or (
+            board[2][0] == "X" and board[2][1] == "X" and board[2][2] == "X") or (
             board[0][0] == "X" and board[1][1] == "X" and board[2][2] == "X") or (
             board[0][2] == "X" and board[1][1] == "X" and board[2][0] == "X"):
         print("X获胜")
